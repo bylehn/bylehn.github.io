@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Research & Projects</title>
-    <!-- Inter font for Notion-like typography -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css" rel="stylesheet">
+    <title>Your Name - Academic Portfolio</title>
+    <!-- Computer Modern Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/computer-modern/0.7.0/fonts/Serif/cmun-serif.css">
     <style>
         :root {
-            --bg-primary: #191919;
-            --bg-secondary: #212121;
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #242424;
             --text-primary: #E1E1E1;
-            --text-secondary: #A0A0A0;
-            --accent: #2E8555;
+            --text-secondary: #B0B0B0;
+            --accent: #6B8F71;
             --hover-bg: #2A2A2A;
             --border-color: #333333;
+            --font-serif: "Computer Modern Serif", Georgia, serif;
         }
 
         * {
@@ -24,11 +25,11 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-serif);
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
         }
 
         .container {
@@ -39,150 +40,127 @@
 
         header {
             padding: 4rem 0 2rem;
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 2rem;
         }
 
         .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            object-fit: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
             border: 2px solid var(--border-color);
         }
 
-        .profile-content h1 {
+        h1 {
             font-size: 2.5rem;
-            font-weight: 700;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
+            font-weight: normal;
         }
 
         .title {
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
         }
 
         nav {
-            margin: 2rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        nav ul {
-            list-style: none;
             display: flex;
-            gap: 1.5rem;
-            padding-bottom: 1rem;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
         }
 
         nav a:hover {
-            color: var(--text-primary);
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-            letter-spacing: -0.01em;
-        }
-
-        .card {
-            background-color: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
-
-        .publication {
-            margin-bottom: 2rem;
-        }
-
-        .publication h3 {
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .publication .authors {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .publication .venue {
-            font-size: 0.9rem;
             color: var(--accent);
-            margin-bottom: 0.5rem;
         }
 
-        .tag {
-            display: inline-block;
-            padding: 0.2rem 0.8rem;
-            background-color: var(--hover-bg);
-            color: var(--text-secondary);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
         }
 
-        .research-area {
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .content {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section {
+            margin-bottom: 3rem;
             background-color: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 1rem;
+            padding: 2rem;
+            border-radius: 8px;
             border: 1px solid var(--border-color);
         }
 
-        .research-area h3 {
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+            color: var(--accent);
         }
 
-        .research-area p {
+        .latest-publication {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--hover-bg);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .latest-publication h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: normal;
+        }
+
+        .latest-publication .authors {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .latest-publication .venue {
+            color: var(--accent);
+            font-size: 0.9rem;
         }
 
         footer {
-            padding: 4rem 0;
             text-align: center;
+            padding: 2rem 0;
             color: var(--text-secondary);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .social-links a {
@@ -195,38 +173,11 @@
             color: var(--accent);
         }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Dark mode scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--hover-bg);
-        }
-
         @media (max-width: 768px) {
-            .profile {
+            nav {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                align-items: center;
+                gap: 1rem;
             }
 
             .social-links {
@@ -239,94 +190,43 @@
     <div class="container">
         <header>
             <div class="profile">
-                <img src="/api/placeholder/120/120" alt="Profile Photo">
-                <div class="profile-content">
-                    <h1>Your Name</h1>
-                    <div class="title">Research Scientist • AI & Machine Learning</div>
-                    <div>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Deep Learning</span>
-                    </div>
-                </div>
+                <img src="/api/placeholder/150/150" alt="Profile Photo">
+                <h1>Your Name</h1>
+                <div class="title">Research Scientist • Department of Computer Science</div>
             </div>
             <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
 
-        <section id="about">
-            <h2 class="section-title">About</h2>
-            <div class="card">
-                <p>I'm a research scientist focusing on machine learning and computer vision. Currently working on developing novel approaches to understanding visual data through deep learning.</p>
-                <p style="margin-top: 1rem">Previously: PhD in Computer Science from Stanford University, Research Intern at Google AI.</p>
+        <main class="content">
+            <div class="section">
+                <h2>About</h2>
+                <p>Welcome to my academic webpage. I am a Research Scientist in the Department of Computer Science, focusing on machine learning and computer vision.</p>
+                <p style="margin-top: 1rem">My research interests lie at the intersection of computer vision, machine learning, and artificial intelligence, with a particular focus on developing novel approaches to visual understanding.</p>
             </div>
-        </section>
 
-        <section id="research">
-            <h2 class="section-title">Research Areas</h2>
-            <div class="research-area">
-                <h3>Computer Vision & Deep Learning</h3>
-                <p>Developing novel architectures for visual understanding and representation learning.</p>
-            </div>
-            <div class="research-area">
-                <h3>Natural Language Processing</h3>
-                <p>Working on multi-modal learning combining vision and language understanding.</p>
-            </div>
-        </section>
-
-        <section id="publications">
-            <h2 class="section-title">Selected Publications</h2>
-            <div class="card">
-                <div class="publication">
+            <div class="section">
+                <h2>Latest Publication</h2>
+                <div class="latest-publication">
                     <h3>Novel Approach to Visual Representation Learning</h3>
                     <div class="authors">Your Name, Co-author One, Co-author Two</div>
-                    <div class="venue">CVPR 2024</div>
-                    <div>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Deep Learning</span>
-                    </div>
+                    <div class="venue">Conference on Computer Vision and Pattern Recognition (CVPR) 2024</div>
                 </div>
             </div>
-            <div class="card">
-                <div class="publication">
-                    <h3>Understanding Multi-Modal Learning</h3>
-                    <div class="authors">Your Name, Co-author One</div>
-                    <div class="venue">NeurIPS 2023</div>
-                    <div>
-                        <span class="tag">Multi-Modal</span>
-                        <span class="tag">Machine Learning</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="card">
-                <h3>Project Name</h3>
-                <p style="color: var(--text-secondary); margin: 1rem 0;">Description of the project and its impact. What problems does it solve and what technologies were used.</p>
-                <div>
-                    <span class="tag">Python</span>
-                    <span class="tag">PyTorch</span>
-                    <span class="tag">Computer Vision</span>
-                </div>
-            </div>
-        </section>
+        </main>
 
         <footer>
             <div class="social-links">
                 <a href="mailto:your.email@university.edu">Email</a>
                 <a href="https://github.com/yourusername">GitHub</a>
                 <a href="https://scholar.google.com/citations?user=your-id">Google Scholar</a>
-                <a href="https://twitter.com/yourusername">Twitter</a>
             </div>
-            <div>© 2024 Your Name. All rights reserved.</div>
+            <div>© 2024 Your Name</div>
         </footer>
     </div>
 </body>
