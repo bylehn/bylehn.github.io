@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Your Name - Research Portfolio</title>
+    <title>Your Name - Research & Projects</title>
+    <!-- Inter font for Notion-like typography -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter-ui/3.19.3/inter.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #f8f9fa;
-            --text-color: #2c3e50;
+            --bg-primary: #191919;
+            --bg-secondary: #212121;
+            --text-primary: #E1E1E1;
+            --text-secondary: #A0A0A0;
+            --accent: #2E8555;
+            --hover-bg: #2A2A2A;
+            --border-color: #333333;
         }
 
         * {
@@ -19,23 +24,21 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            margin-bottom: 2rem;
+            padding: 4rem 0 2rem;
         }
 
         .profile {
@@ -46,110 +49,173 @@
         }
 
         .profile img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
             object-fit: cover;
+            border: 2px solid var(--border-color);
         }
 
-        .profile-content {
-            flex: 1;
-        }
-
-        h1 {
+        .profile-content h1 {
             font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
         .title {
-            font-size: 1.2rem;
-            color: #7f8c8d;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
             margin-bottom: 1rem;
         }
 
         nav {
-            margin-bottom: 2rem;
+            margin: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 1.5rem;
+            padding-bottom: 1rem;
         }
 
         nav a {
-            color: var(--secondary-color);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         nav a:hover {
-            background-color: #edf2f7;
+            color: var(--text-primary);
         }
 
         section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
         }
 
-        h2 {
-            color: var(--primary-color);
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.5rem;
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
         }
 
         .publication {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .publication:last-child {
-            border-bottom: none;
+            margin-bottom: 2rem;
         }
 
         .publication h3 {
-            color: var(--secondary-color);
+            color: var(--text-primary);
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .publication .authors {
-            font-style: italic;
-            color: #666;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             margin-bottom: 0.5rem;
         }
 
         .publication .venue {
-            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            background-color: var(--hover-bg);
+            color: var(--text-secondary);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .research-area {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .research-area h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .research-area p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
         footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
-        .contact-info {
+        .social-links {
             display: flex;
-            gap: 2rem;
             justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .contact-info a {
-            color: white;
+        .social-links a {
+            color: var(--text-secondary);
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Dark mode scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--hover-bg);
         }
 
         @media (max-width: 768px) {
@@ -159,26 +225,29 @@
             }
 
             nav ul {
-                flex-direction: column;
-                text-align: center;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
+            .social-links {
+                flex-wrap: wrap;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="container">
+        <header>
             <div class="profile">
-                <img src="/api/placeholder/200/200" alt="Profile Photo">
+                <img src="/api/placeholder/120/120" alt="Profile Photo">
                 <div class="profile-content">
-                    <h1>Dr. Your Name</h1>
-                    <div class="title">Assistant Professor of Computer Science</div>
-                    <p>University Department</p>
+                    <h1>Your Name</h1>
+                    <div class="title">Research Scientist • AI & Machine Learning</div>
+                    <div>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
                 </div>
             </div>
             <nav>
@@ -186,63 +255,79 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
-                    <li><a href="#teaching">Teaching</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
             </nav>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
         <section id="about">
-            <h2>About Me</h2>
-            <p>Welcome to my academic webpage. I am an Assistant Professor in the Department of Computer Science at [University Name]. My research focuses on [Your Research Areas], with particular emphasis on [Specific Focus Areas].</p>
-            <p>Previously, I completed my Ph.D. at [University] under the supervision of [Advisor Name], where I worked on [Thesis Topic].</p>
+            <h2 class="section-title">About</h2>
+            <div class="card">
+                <p>I'm a research scientist focusing on machine learning and computer vision. Currently working on developing novel approaches to understanding visual data through deep learning.</p>
+                <p style="margin-top: 1rem">Previously: PhD in Computer Science from Stanford University, Research Intern at Google AI.</p>
+            </div>
         </section>
 
         <section id="research">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Research Area 1: Brief description of your work in this area</li>
-                <li>Research Area 2: Brief description of your work in this area</li>
-                <li>Research Area 3: Brief description of your work in this area</li>
-            </ul>
+            <h2 class="section-title">Research Areas</h2>
+            <div class="research-area">
+                <h3>Computer Vision & Deep Learning</h3>
+                <p>Developing novel architectures for visual understanding and representation learning.</p>
+            </div>
+            <div class="research-area">
+                <h3>Natural Language Processing</h3>
+                <p>Working on multi-modal learning combining vision and language understanding.</p>
+            </div>
         </section>
 
         <section id="publications">
-            <h2>Selected Publications</h2>
-            <div class="publication">
-                <h3>Paper Title 1</h3>
-                <div class="authors">Your Name, Co-author 1, Co-author 2</div>
-                <div class="venue">Conference/Journal Name, Year</div>
-                <p>Brief description of the paper and its contributions.</p>
+            <h2 class="section-title">Selected Publications</h2>
+            <div class="card">
+                <div class="publication">
+                    <h3>Novel Approach to Visual Representation Learning</h3>
+                    <div class="authors">Your Name, Co-author One, Co-author Two</div>
+                    <div class="venue">CVPR 2024</div>
+                    <div>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                </div>
             </div>
-            <div class="publication">
-                <h3>Paper Title 2</h3>
-                <div class="authors">Your Name, Co-author 1, Co-author 2</div>
-                <div class="venue">Conference/Journal Name, Year</div>
-                <p>Brief description of the paper and its contributions.</p>
+            <div class="card">
+                <div class="publication">
+                    <h3>Understanding Multi-Modal Learning</h3>
+                    <div class="authors">Your Name, Co-author One</div>
+                    <div class="venue">NeurIPS 2023</div>
+                    <div>
+                        <span class="tag">Multi-Modal</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="teaching">
-            <h2>Teaching</h2>
-            <ul>
-                <li>Course 1: Brief description</li>
-                <li>Course 2: Brief description</li>
-                <li>Course 3: Brief description</li>
-            </ul>
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="card">
+                <h3>Project Name</h3>
+                <p style="color: var(--text-secondary); margin: 1rem 0;">Description of the project and its impact. What problems does it solve and what technologies were used.</p>
+                <div>
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Computer Vision</span>
+                </div>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <div class="contact-info" id="contact">
-                <a href="mailto:your.email@university.edu">your.email@university.edu</a>
+        <footer>
+            <div class="social-links">
+                <a href="mailto:your.email@university.edu">Email</a>
                 <a href="https://github.com/yourusername">GitHub</a>
                 <a href="https://scholar.google.com/citations?user=your-id">Google Scholar</a>
+                <a href="https://twitter.com/yourusername">Twitter</a>
             </div>
-        </div>
-    </footer>
+            <div>© 2024 Your Name. All rights reserved.</div>
+        </footer>
+    </div>
 </body>
 </html>
