@@ -47,55 +47,64 @@
             margin-bottom: 2rem;
         }
 
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 2px solid var(--border-color);
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
-
+        
+        .profile img {
+            width: 200px;         /* Increased from 150px */
+            height: 200px;        /* Increased from 150px */
+            border-radius: 50%;
+            object-fit: cover;
+            border: none;         /* Removed the border */
+            margin-bottom: 1rem;  /* Adjusted spacing */
+        }
+        
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;    /* Larger font size */
             margin-bottom: 0.5rem;
-            font-weight: 400;
+            font-weight: 300;     /* Lighter weight for modern look */
             letter-spacing: -0.02em;
         }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            color: var(--accent);
-            letter-spacing: -0.01em;
-        }
-
+        
         .title {
             color: var(--text-secondary);
             font-size: 1.2rem;
             margin-bottom: 2rem;
             font-weight: 300;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-
+        
+        .title::before,
+        .title::after {
+            content: "•";
+            color: var(--accent);
+        }
+        
         nav {
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin: 2rem 0;
         }
-
+        
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.2s;
-            position: relative;
-            font-weight: 400;
+            font-weight: 300;     /* Lighter weight */
         }
-
+        
         nav a:hover {
-            color: var(--accent);
-        }
+            color: var(--text-primary); /* Changed from accent color */
+}
 
         nav a::after {
             content: '';
@@ -203,7 +212,7 @@
     <div class="container">
         <header>
             <div class="profile">
-                <img src="/images/FabianBylehn-byJasonSmith-1450.jpg" alt="Profile Photo">
+                <img src="/images/FabianBylehn-byJasonSmith-1452.jpg" alt="Profile Photo">
                 <h1>Fabian Byléhn</h1>
                 <div class="title">Research Scientist • Computational Protein Engineer </div>
             </div>
