@@ -72,11 +72,27 @@
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.2s;
+            position: relative;
             font-weight: 400;
         }
 
         nav a:hover {
             color: var(--accent);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         .contact-section {
