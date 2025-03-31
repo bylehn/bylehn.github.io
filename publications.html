@@ -95,78 +95,20 @@
             width: 100%;
         }
 
-        .year {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .publication {
-            margin-left: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .publication-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .message {
+            font-size: 1.5rem;
             color: var(--text-primary);
-            font-weight: 400;
+            margin-top: 2rem;
+            text-align: center;
         }
 
-        .publication-authors {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .publication-venue {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .abstract {
-            background-color: var(--bg-secondary);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            display: none;
-        }
-
-        .abstract.show {
-            display: block;
-        }
-
-        .abstract-toggle {
+        .message a {
             color: var(--accent);
-            cursor: pointer;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .links a {
-            color: var(--text-secondary);
             text-decoration: none;
-            margin-right: 1.5rem;
-            transition: color 0.2s;
         }
 
-        .links a:hover {
-            color: var(--accent);
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .publication {
-                margin-left: 0;
-            }
+        .message a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -186,53 +128,10 @@
         </header>
 
         <main>
-            <div class="year">2024</div>
-            
-            <div class="publication">
-                <div class="publication-title">Novel Approach to Visual Representation Learning</div>
-                <div class="publication-authors">Your Name, Co-author One, Co-author Two</div>
-                <div class="publication-venue">Conference on Computer Vision and Pattern Recognition (CVPR) 2024</div>
-                <div class="abstract-toggle" onclick="toggleAbstract('abstract1')">Show Abstract ▾</div>
-                <div id="abstract1" class="abstract">
-                    We present a novel approach to learning visual representations through self-supervised training. 
-                    Our method demonstrates significant improvements over existing approaches, particularly in scenarios 
-                    with limited labeled data.
-                </div>
-                <div class="links">
-                    <a href="#">PDF</a>
-                    <a href="#">Code</a>
-                    <a href="#">BibTeX</a>
-                </div>
-            </div>
-
-            <div class="year">2023</div>
-            
-            <div class="publication">
-                <div class="publication-title">Understanding Multi-Modal Learning</div>
-                <div class="publication-authors">Your Name, Co-author One</div>
-                <div class="publication-venue">Neural Information Processing Systems (NeurIPS) 2023</div>
-                <div class="abstract-toggle" onclick="toggleAbstract('abstract2')">Show Abstract ▾</div>
-                <div id="abstract2" class="abstract">
-                    We present a theoretical framework for understanding multi-modal learning systems. 
-                    Our analysis reveals key insights into the interaction between different modalities.
-                </div>
-                <div class="links">
-                    <a href="#">PDF</a>
-                    <a href="#">Code</a>
-                    <a href="#">BibTeX</a>
-                </div>
+            <div class="message">
+                This page is being updated, check back here soon. In the meantime, you can view my publications on <a href="https://scholar.google.com">Google Scholar</a>.
             </div>
         </main>
     </div>
-
-    <script>
-        function toggleAbstract(id) {
-            const abstract = document.getElementById(id);
-            const isShowing = abstract.classList.contains('show');
-            abstract.classList.toggle('show');
-            const toggle = abstract.previousElementSibling;
-            toggle.textContent = isShowing ? 'Show Abstract ▾' : 'Hide Abstract ▴';
-        }
-    </script>
 </body>
 </html>
