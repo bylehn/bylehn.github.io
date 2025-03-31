@@ -37,6 +37,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+            text-align: center;
         }
 
         header {
@@ -95,55 +96,28 @@
             width: 100%;
         }
 
-        .semester {
+        .update-message {
             margin: 3rem 0;
-        }
-
-        .semester-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
         }
 
-        .course {
-            background-color: var(--bg-secondary);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
+        .fun-object {
+            margin-top: 2rem;
+            font-size: 3rem;
+            animation: float 2s infinite;
         }
 
-        .course h3 {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-        }
-
-        .course-info {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .course-description {
-            margin-bottom: 1rem;
-        }
-
-        .course-links {
-            margin-top: 1rem;
-        }
-
-        .course-links a {
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 1.5rem;
-            transition: color 0.2s;
-        }
-
-        .course-links a:hover {
-            text-decoration: underline;
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -171,36 +145,11 @@
         </header>
 
         <main>
-            <div class="semester">
-                <div class="semester-title">Spring 2024</div>
-                
-                <div class="course">
-                    <h3>Advanced Machine Learning</h3>
-                    <div class="course-info">CS 4040 • Graduate Level</div>
-                    <div class="course-description">
-                        Advanced topics in machine learning, including deep learning, reinforcement learning, and probabilistic models.
-                    </div>
-                    <div class="course-links">
-                        <a href="#">Course Website</a>
-                        <a href="#">Syllabus</a>
-                    </div>
-                </div>
+            <div class="update-message">
+                This page is being updated, check back here soon.
             </div>
-
-            <div class="semester">
-                <div class="semester-title">Fall 2023</div>
-                
-                <div class="course">
-                    <h3>Introduction to Computer Vision</h3>
-                    <div class="course-info">CS 3030 • Undergraduate Level</div>
-                    <div class="course-description">
-                        Fundamentals of computer vision, covering image processing, feature detection, and deep learning approaches.
-                    </div>
-                    <div class="course-links">
-                        <a href="#">Course Website</a>
-                        <a href="#">Syllabus</a>
-                    </div>
-                </div>
+            <div class="fun-object">
+                &#128640; <!-- This will display a rocket emoji -->
             </div>
         </main>
     </div>
