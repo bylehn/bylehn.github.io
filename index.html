@@ -3,280 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabian Byléhn - Academic Portfolio</title>
-    <!-- Latin Modern Sans font (similar to LaTeX headers) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lato/2.0/css/lato.min.css">
-    <style>
-        :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #242424;
-            --text-primary: #E1E1E1;
-            --text-secondary: #B0B0B0;
-            --accent: #6B8F71;
-            --hover-bg: #2A2A2A;
-            --border-color: #333333;
-            --font-sans: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 16px;
-            font-weight: 300;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            padding: 4rem 0 2rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        .profile img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 2px solid var(--border-color);
-            object-fit: cover;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-        }
-
-        .profile-container {
-            position: relative;
-            width: fit-content;
-            margin: 0 auto;
-        }
-        
-        .image-credit {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .profile-container:hover .image-credit {
-            opacity: 1;
-}
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-            color: var(--accent);
-            letter-spacing: -0.01em;
-        }
-
-        .title {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-            position: relative;
-            font-weight: 400;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .content {
-            margin: 2rem 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-            background-color: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .latest-publication {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: var(--hover-bg);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .latest-publication h3 {
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        .latest-publication .authors {
-            color: var(--text-secondary);
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-        }
-
-        .latest-publication .venue {
-            color: var(--accent);
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .social-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-            font-weight: 400;
-        }
-
-        .social-links a:hover {
-            color: var(--accent);
-        }
-
-        p {
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .social-links {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+    <title>Fabian Byléhn - Research Scientist</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile">
-               <div class="profile-container">
-                    <img src="/images/FabianBylehn-byJasonSmith-1452.jpg" alt="Profile Photo">
-                    <div class="image-credit">Photo: Courtesy of the UChicago Pritzker School of Molecular Engineering/Jason Smith</div>
-                </div>
-                <h1>Fabian Byléhn</h1>
-                <div class="title">Research Scientist • Computational Protein Engineer </div>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="code.html">Code</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+    <nav class="top-nav">
+        <div class="nav-brand">Fabian Byléhn</div>
+        <div class="nav-links">
+            <a href="index.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="code.html">Code</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
 
-        <main class="content">
-            <div class="section">
-                <h2>About</h2>
-                <p>Welcome! I am a PhD Candidate at the University of Chicago's Pritzker School of Molecular Engineering, where I combine computational methods with machine learning to help solve challenging problems in medicine and materials science.</p>
-                
-                <p>Think of proteins as tiny molecular machines that perform countless essential functions in our bodies. My work focuses on understanding how these machines work and engineering them to work better – whether that's developing new therapeutic drugs or understanding disease mechanisms. I'm also fascinated by how we can use similar computational techniques to design new materials with properties not found in nature.</p>
+    <div class="main-layout">
+        <div class="content-area">
+            <div class="role-label">Research Scientist • Computational Protein Engineer</div>
+            <h1 class="main-title">Dr. Fabian<br>Byléhn</h1>
+            <p class="description">
+                Bridging computational methods and machine learning to solve challenging problems in medicine and materials science.
+            </p>
+            <div class="cta-buttons">
+                <a href="research.html" class="btn btn-primary">View Work ↘</a>
+                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        
+        <div class="visual-grid">
+            <!-- Row 1 -->
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
             
-                <p>When I'm not training neural networks or running molecular simulations, I enjoy running with my legs and away from problems.</p>
+            <!-- Row 2 -->
+            <div class="grid-cell">
+                <div class="grid-point point-center"></div>
             </div>
-
-            <div class="section">
-                <h2>Latest Publication</h2>
-                <div class="latest-publication">
-                    <h3>An autonomous design algorithm to experimentally realize three-dimensionally isotropic auxetic network structures without compromising density</h3>
-                    <div class="authors">Meng Shen, Marcos A. Reyes-Martinez, Louise Ahure Powell, Mark A. Iadicola, Abhishek Sharma, Fabian Byléhn, Nidhi Pashine, Edwin P. Chan, Christopher L. Soles, Heinrich M. Jaeger & Juan J. de Pablo</div>
-                    <div class="venue">npj Computational Materials (2024) 10:113 </div>
+            <div class="grid-cell"></div>
+            
+            <!-- Row 3 -->
+            <div class="grid-cell"></div>
+            <div class="grid-cell">
+                <div class="grid-point point-center"></div>
+                <div style="position: absolute; bottom: 2rem; right: 2rem; text-align: right;">
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 1px; margin-bottom: 0.5rem;">OPEN TO</div>
+                    <div style="font-weight: 700; font-size: 1.5rem;">Opportunities</div>
                 </div>
             </div>
-        </main>
+        </div>
+    </div>
 
-        <footer>
-            <div class="social-links">
-                <a href="mailto:f.bylehn@gmail.com">Email</a>
-                <a href="https://github.com/bylehn">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=4dGoSXMAAAAJ&hl=sv&oi=ao">Google Scholar</a>
-                <a href="https://www.linkedin.com/in/fabian-bylehn/">LinkedIn</a>
-            </div>
-            <div>© 2024 Fabian Byléhn</div>
-        </footer>
+    <div class="footer-bar">
+        <div class="footer-info">
+            <span>PhD UChicago</span>
+            <span>Research Scientist</span>
+            <span>Computational Protein Engineer</span>
+        </div>
+        <div class="footer-arrow">↘</div>
     </div>
 </body>
 </html>

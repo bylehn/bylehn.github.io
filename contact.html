@@ -4,196 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Fabian Byléhn</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lato/2.0/css/lato.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #242424;
-            --text-primary: #E1E1E1;
-            --text-secondary: #B0B0B0;
-            --accent: #6B8F71;
-            --hover-bg: #2A2A2A;
-            --border-color: #333333;
-            --font-sans: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 16px;
-            font-weight: 300;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            padding: 4rem 0 2rem;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-        }
-
-        .title {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-            position: relative;
-            font-weight: 400;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .contact-section {
-            background-color: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 2rem;
-        }
-
-        .contact-info {
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .contact-label {
-            width: 120px;
-            color: var(--text-secondary);
-        }
-
-        .contact-value {
-            color: var(--text-primary);
-        }
-
-        .contact-value a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .contact-value a:hover {
-            text-decoration: underline;
-        }
-
-        .address {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .contact-label {
-                margin-bottom: 0.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Contact</h1>
-            <div class="title">Fabian Byléhn</div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="code.html">Code</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </header>
+    <nav class="top-nav">
+        <div class="nav-brand">Fabian Byléhn</div>
+        <div class="nav-links">
+            <a href="index.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="code.html">Code</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
 
-        <main>
+    <div class="page-container">
+        <div class="page-content">
+            <h1 class="main-title" style="font-size: 3rem; margin-bottom: 3rem;">Contact</h1>
+            
             <div class="contact-section">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-label">Email:</div>
-                        <div class="contact-value"><a href="mailto:f.bylehn@gmail.com">f.bylehn@gmail.com</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-label">Office:</div>
-                        <div class="contact-value">Room 251, Eckhart Research Center</div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-label">GitHub:</div>
-                        <div class="contact-value"><a href="https://github.com/bylehn">github.com/bylehn</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-label">Google Scholar:</div>
-                        <div class="contact-value"><a href="https://scholar.google.com/citations?user=4dGoSXMAAAAJ&hl=sv&oi=ao">Google Scholar Profile</a></div>
-                    </div>
+                <div class="contact-item">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value"><a href="mailto:f.bylehn@gmail.com">f.bylehn@gmail.com</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Office</div>
+                    <div class="contact-value">Room 251, Eckhart Research Center</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value"><a href="https://github.com/bylehn">github.com/bylehn</a></div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">Google Scholar</div>
+                    <div class="contact-value"><a href="https://scholar.google.com/citations?user=4dGoSXMAAAAJ&hl=sv&oi=ao">Google Scholar Profile</a></div>
                 </div>
 
-                <div class="address">
+                <div class="address-block">
                     <div class="contact-item">
-                        <div class="contact-label">Address:</div>
+                        <div class="contact-label">Address</div>
                         <div class="contact-value">
                             Pritzker School of Molecular Engineering<br>
                             University of Chicago<br>
@@ -203,7 +54,20 @@
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+        
+        <div class="page-sidebar">
+            <!-- Decorative grid background handled by CSS -->
+        </div>
+    </div>
+
+    <div class="footer-bar">
+        <div class="footer-info">
+            <span>PhD UChicago</span>
+            <span>Research Scientist</span>
+            <span>Computational Protein Engineer</span>
+        </div>
+        <div class="footer-arrow">↘</div>
     </div>
 </body>
 </html>
